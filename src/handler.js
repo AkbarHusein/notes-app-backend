@@ -1,14 +1,6 @@
 const { nanoid } = require("nanoid");
 const notes = require("./notes");
 
-const home = () => {
-  const response = h.response({
-    status: "ok",
-    message: "Home",
-  });
-  response.code(200);
-  return response;
-};
 const addNoteHandler = (req, h) => {
   const { title, tags, body } = req.payload;
   const id = nanoid(16);
@@ -130,5 +122,4 @@ module.exports = {
   getNoteByIdHandler,
   editNoteByIdHandler,
   deleteNoteByIdHandler,
-  home,
 };
