@@ -10,9 +10,7 @@ const routes = [
   {
     method: "GET",
     path: "/",
-    handler: () => {
-      return { status: "ok" };
-    },
+    handler: home,
   },
   {
     method: "POST",
