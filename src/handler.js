@@ -39,7 +39,14 @@ const addNoteHandler = (req, h) => {
   return response;
 };
 
-const getAllNotesHandler = (req, h) => {};
+const getAllNotesHandler = (req, h) => {
+  const response = h.response({
+    status: "success",
+    data: notes,
+  });
+  response.code(200);
+  return response;
+};
 
 const getNoteByIdHandler = (req, h) => {
   const { id } = req.params;
