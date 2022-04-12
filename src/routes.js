@@ -8,13 +8,6 @@ const {
 
 const routes = [
   {
-    method: "GET",
-    path: "/",
-    handler: () => {
-      return "hellow";
-    },
-  },
-  {
     method: "POST",
     path: "/notes",
     handler: addNoteHandler,

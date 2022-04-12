@@ -3,6 +3,7 @@ const notes = require("./notes");
 
 const addNoteHandler = (req, h) => {
   const { title, tags, body } = req.payload;
+
   const id = nanoid(16);
   const createdAt = new Date().toISOString();
   const updatedAt = createdAt;
@@ -42,7 +43,7 @@ const addNoteHandler = (req, h) => {
 const getAllNotesHandler = (req, h) => {
   const response = h.response({
     status: "success",
-    data: notes,
+    data: { notes },
   });
   response.code(200);
   return response;
@@ -123,6 +124,7 @@ const deleteNoteByIdHandler = (request, h) => {
   response.code(404);
   return response;
 };
+
 module.exports = {
   addNoteHandler,
   getAllNotesHandler,
